@@ -1,0 +1,6 @@
+# Ignoruj Android & iOS část pro detekci jazyka
+book_compass_flutter/android/* linguist-vendored
+book_compass_flutter/ios/* linguist-vendored
+
+# Soustřeď se na Dart lib
+book_compass_flutter/lib/* linguist-detectable=true
