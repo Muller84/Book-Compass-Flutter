@@ -1,0 +1,562 @@
+[
+  {
+    "id": "b001",
+    "title": "Magical Journey 1",
+    "author": "Sarah Miller",
+    "level": 1,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Vocabulary: Adjectives",
+      "level-1"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Vocabulary: Adjectives. Recommended for reading level 1.",
+    "rating": 4.7
+  },
+  {
+    "id": "b002",
+    "title": "How to Build 2",
+    "author": "Sarah Miller",
+    "level": 5,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Comprehension: Inferences",
+      "level-5"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Comprehension: Inferences. Recommended for reading level 5.",
+    "rating": 3.2
+  },
+  {
+    "id": "b003",
+    "title": "My First Atlas 3",
+    "author": "Sarah Miller",
+    "level": 4,
+    "category": "Fantasy & Magic",
+    "tags": [
+      "Fantasy & Magic",
+      "Grammar: Past Tense",
+      "level-4"
+    ],
+    "description": "A book focusing on Fantasy & Magic and practising Grammar: Past Tense. Recommended for reading level 4.",
+    "rating": 4.5
+  },
+  {
+    "id": "b004",
+    "title": "Starting to Read  4",
+    "author": "Emily Clarke",
+    "level": 1,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Phonics: Short Vowels",
+      "level-1"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Phonics: Short Vowels. Recommended for reading level 1.",
+    "rating": 4.4
+  },
+  {
+    "id": "b005",
+    "title": "How to Build 5",
+    "author": "David Jones",
+    "level": 5,
+    "category": "History & Culture",
+    "tags": [
+      "History & Culture",
+      "Writing: Simple Sentences",
+      "level-5"
+    ],
+    "description": "A book focusing on History & Culture and practising Writing: Simple Sentences. Recommended for reading level 5.",
+    "rating": 4.1
+  },
+  {
+    "id": "b006",
+    "title": "How to Build 6",
+    "author": "Emily Clarke",
+    "level": 3,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Grammar: Past Tense",
+      "level-3"
+    ],
+    "description": "A book focusing on Space & Science and practising Grammar: Past Tense. Recommended for reading level 3.",
+    "rating": 4.0
+  },
+  {
+    "id": "b007",
+    "title": "Magical Journey 7",
+    "author": "Sarah Miller",
+    "level": 5,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Comprehension: Inferences",
+      "level-5"
+    ],
+    "description": "A book focusing on Space & Science and practising Comprehension: Inferences. Recommended for reading level 5.",
+    "rating": 4.1
+  },
+  {
+    "id": "b008",
+    "title": "Starting to Read  8",
+    "author": "David Jones",
+    "level": 5,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Grammar: Past Tense",
+      "level-5"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Grammar: Past Tense. Recommended for reading level 5.",
+    "rating": 4.4
+  },
+  {
+    "id": "b009",
+    "title": "My First Atlas 9",
+    "author": "Sarah Miller",
+    "level": 3,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Phonics: Short Vowels",
+      "level-3"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Phonics: Short Vowels. Recommended for reading level 3.",
+    "rating": 4.8
+  },
+  {
+    "id": "b010",
+    "title": "The Great Mystery 10",
+    "author": "David Jones",
+    "level": 2,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Grammar: Past Tense",
+      "level-2"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Grammar: Past Tense. Recommended for reading level 2.",
+    "rating": 4.9
+  },
+  {
+    "id": "b011",
+    "title": "Starting to Read  11",
+    "author": "Sarah Miller",
+    "level": 4,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Comprehension: Inferences",
+      "level-4"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Comprehension: Inferences. Recommended for reading level 4.",
+    "rating": 4.9
+  },
+  {
+    "id": "b012",
+    "title": "How to Build 12",
+    "author": "Sarah Miller",
+    "level": 3,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Phonics: Short Vowels",
+      "level-3"
+    ],
+    "description": "A book focusing on Space & Science and practising Phonics: Short Vowels. Recommended for reading level 3.",
+    "rating": 4.8
+  },
+  {
+    "id": "b013",
+    "title": "Stories from Pocket 13",
+    "author": "Thomas Green",
+    "level": 5,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Writing: Simple Sentences",
+      "level-5"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Writing: Simple Sentences. Recommended for reading level 5.",
+    "rating": 3.4
+  },
+  {
+    "id": "b014",
+    "title": "How to Build 14",
+    "author": "David Jones",
+    "level": 5,
+    "category": "History & Culture",
+    "tags": [
+      "History & Culture",
+      "Phonics: Short Vowels",
+      "level-5"
+    ],
+    "description": "A book focusing on History & Culture and practising Phonics: Short Vowels. Recommended for reading level 5.",
+    "rating": 4.0
+  },
+  {
+    "id": "b015",
+    "title": "How to Build 15",
+    "author": "David Jones",
+    "level": 5,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Phonics: Short Vowels",
+      "level-5"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Phonics: Short Vowels. Recommended for reading level 5.",
+    "rating": 4.9
+  },
+  {
+    "id": "b016",
+    "title": "My First Atlas 16",
+    "author": "Thomas Green",
+    "level": 5,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Grammar: Past Tense",
+      "level-5"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Grammar: Past Tense. Recommended for reading level 5.",
+    "rating": 4.3
+  },
+  {
+    "id": "b017",
+    "title": "Magical Journey 17",
+    "author": "Thomas Green",
+    "level": 4,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Vocabulary: Adjectives",
+      "level-4"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Vocabulary: Adjectives. Recommended for reading level 4.",
+    "rating": 3.1
+  },
+  {
+    "id": "b018",
+    "title": "My First Atlas 18",
+    "author": "Emily Clarke",
+    "level": 3,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Vocabulary: Adjectives",
+      "level-3"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Vocabulary: Adjectives. Recommended for reading level 3.",
+    "rating": 4.3
+  },
+  {
+    "id": "b019",
+    "title": "My First Atlas 19",
+    "author": "Sarah Miller",
+    "level": 3,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Grammar: Past Tense",
+      "level-3"
+    ],
+    "description": "A book focusing on Space & Science and practising Grammar: Past Tense. Recommended for reading level 3.",
+    "rating": 3.1
+  },
+  {
+    "id": "b020",
+    "title": "My First Atlas 20",
+    "author": "Emily Clarke",
+    "level": 2,
+    "category": "History & Culture",
+    "tags": [
+      "History & Culture",
+      "Vocabulary: Adjectives",
+      "level-2"
+    ],
+    "description": "A book focusing on History & Culture and practising Vocabulary: Adjectives. Recommended for reading level 2.",
+    "rating": 4.9
+  },
+  {
+    "id": "b021",
+    "title": "How to Build 21",
+    "author": "Thomas Green",
+    "level": 3,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Writing: Simple Sentences",
+      "level-3"
+    ],
+    "description": "A book focusing on Space & Science and practising Writing: Simple Sentences. Recommended for reading level 3.",
+    "rating": 4.0
+  },
+  {
+    "id": "b022",
+    "title": "Starting to Read  22",
+    "author": "Sarah Miller",
+    "level": 1,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Vocabulary: Adjectives",
+      "level-1"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Vocabulary: Adjectives. Recommended for reading level 1.",
+    "rating": 4.2
+  },
+  {
+    "id": "b023",
+    "title": "Stories from Pocket 23",
+    "author": "Thomas Green",
+    "level": 3,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Phonics: Short Vowels",
+      "level-3"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Phonics: Short Vowels. Recommended for reading level 3.",
+    "rating": 4.3
+  },
+  {
+    "id": "b024",
+    "title": "Magical Journey 24",
+    "author": "Thomas Green",
+    "level": 2,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Vocabulary: Adjectives",
+      "level-2"
+    ],
+    "description": "A book focusing on Space & Science and practising Vocabulary: Adjectives. Recommended for reading level 2.",
+    "rating": 4.8
+  },
+  {
+    "id": "b025",
+    "title": "How to Build 25",
+    "author": "Emily Clarke",
+    "level": 3,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Grammar: Past Tense",
+      "level-3"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Grammar: Past Tense. Recommended for reading level 3.",
+    "rating": 4.3
+  },
+  {
+    "id": "b026",
+    "title": "Magical Journey 26",
+    "author": "David Jones",
+    "level": 4,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Writing: Simple Sentences",
+      "level-4"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Writing: Simple Sentences. Recommended for reading level 4.",
+    "rating": 4.2
+  },
+  {
+    "id": "b027",
+    "title": "Stories from Pocket 27",
+    "author": "Sarah Miller",
+    "level": 3,
+    "category": "Fantasy & Magic",
+    "tags": [
+      "Fantasy & Magic",
+      "Writing: Simple Sentences",
+      "level-3"
+    ],
+    "description": "A book focusing on Fantasy & Magic and practising Writing: Simple Sentences. Recommended for reading level 3.",
+    "rating": 4.1
+  },
+  {
+    "id": "b028",
+    "title": "How to Build 28",
+    "author": "Emily Clarke",
+    "level": 2,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Phonics: Short Vowels",
+      "level-2"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Phonics: Short Vowels. Recommended for reading level 2.",
+    "rating": 3.8
+  },
+  {
+    "id": "b029",
+    "title": "Starting to Read  29",
+    "author": "David Jones",
+    "level": 2,
+    "category": "History & Culture",
+    "tags": [
+      "History & Culture",
+      "Comprehension: Inferences",
+      "level-2"
+    ],
+    "description": "A book focusing on History & Culture and practising Comprehension: Inferences. Recommended for reading level 2.",
+    "rating": 4.0
+  },
+  {
+    "id": "b030",
+    "title": "The Great Mystery 30",
+    "author": "Thomas Green",
+    "level": 2,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Comprehension: Inferences",
+      "level-2"
+    ],
+    "description": "A book focusing on Space & Science and practising Comprehension: Inferences. Recommended for reading level 2.",
+    "rating": 4.8
+  },
+  {
+    "id": "b031",
+    "title": "My First Atlas 31",
+    "author": "Sarah Miller",
+    "level": 2,
+    "category": "Fantasy & Magic",
+    "tags": [
+      "Fantasy & Magic",
+      "Grammar: Past Tense",
+      "level-2"
+    ],
+    "description": "A book focusing on Fantasy & Magic and practising Grammar: Past Tense. Recommended for reading level 2.",
+    "rating": 3.2
+  },
+  {
+    "id": "b032",
+    "title": "Magical Journey 32",
+    "author": "Thomas Green",
+    "level": 3,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Writing: Simple Sentences",
+      "level-3"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Writing: Simple Sentences. Recommended for reading level 3.",
+    "rating": 4.1
+  },
+  {
+    "id": "b033",
+    "title": "How to Build 33",
+    "author": "Sarah Miller",
+    "level": 5,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Phonics: Short Vowels",
+      "level-5"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Phonics: Short Vowels. Recommended for reading level 5.",
+    "rating": 5.0
+  },
+  {
+    "id": "b034",
+    "title": "How to Build 34",
+    "author": "Thomas Green",
+    "level": 3,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Writing: Simple Sentences",
+      "level-3"
+    ],
+    "description": "A book focusing on Space & Science and practising Writing: Simple Sentences. Recommended for reading level 3.",
+    "rating": 4.1
+  },
+  {
+    "id": "b035",
+    "title": "My First Atlas 35",
+    "author": "David Jones",
+    "level": 5,
+    "category": "Space & Science",
+    "tags": [
+      "Space & Science",
+      "Grammar: Past Tense",
+      "level-5"
+    ],
+    "description": "A book focusing on Space & Science and practising Grammar: Past Tense. Recommended for reading level 5.",
+    "rating": 4.1
+  },
+  {
+    "id": "b036",
+    "title": "The Great Mystery 36",
+    "author": "Sarah Miller",
+    "level": 5,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Grammar: Past Tense",
+      "level-5"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Grammar: Past Tense. Recommended for reading level 5.",
+    "rating": 4.7
+  },
+  {
+    "id": "b037",
+    "title": "Magical Journey 37",
+    "author": "Thomas Green",
+    "level": 5,
+    "category": "Friendship & Family",
+    "tags": [
+      "Friendship & Family",
+      "Phonics: Short Vowels",
+      "level-5"
+    ],
+    "description": "A book focusing on Friendship & Family and practising Phonics: Short Vowels. Recommended for reading level 5.",
+    "rating": 4.2
+  },
+  {
+    "id": "b038",
+    "title": "My First Atlas 38",
+    "author": "Thomas Green",
+    "level": 5,
+    "category": "Animals & Nature",
+    "tags": [
+      "Animals & Nature",
+      "Phonics: Short Vowels",
+      "level-5"
+    ],
+    "description": "A book focusing on Animals & Nature and practising Phonics: Short Vowels. Recommended for reading level 5.",
+    "rating": 4.3
+  },
+  {
+    "id": "b039",
+    "title": "Starting to Read  39",
+    "author": "David Jones",
+    "level": 2,
+    "category": "History & Culture",
+    "tags": [
+      "History & Culture",
+      "Vocabulary: Adjectives",
+      "level-2"
+    ],
+    "description": "A book focusing on History & Culture and practising Vocabulary: Adjectives. Recommended for reading level 2.",
+    "rating": 4.7
+  },
+  {
+    "id": "b040",
+    "title": "My First Atlas 40",
+    "author": "Emily Clarke",
+    "level": 2,
+    "category": "Fantasy & Magic",
+    "tags": [
+      "Fantasy & Magic",
+      "Grammar: Past Tense",
+      "level-2"
+    ],
+    "description": "A book focusing on Fantasy & Magic and practising Grammar: Past Tense. Recommended for reading level 2.",
+    "rating": 4.1
+  }
+]

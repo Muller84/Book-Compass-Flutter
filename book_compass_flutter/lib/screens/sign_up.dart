@@ -1,20 +1,21 @@
+import 'package:book_compass_flutter/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'sign_up.dart'; // Import SignUpScreen
 
-
-class LoginScreen extends StatefulWidget{ const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget{ 
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>{
+class _SignUpScreenState extends State<SignUpScreen>{
   // Controllers for text fields   
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _repeatPasswordController = TextEditingController();
 
   // Condition of checkbox and password window  
-  bool rememberMe = false; // checkbox state "Remember Me"
+  bool agreeToTerms = false; // checkbox state "Agree to Terms"
   bool obscurePassword = true; // Initially hide password (eye)
 
 
@@ -23,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen>{
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(  24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -37,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen>{
 
               // Title
               const Text(
-                'Sign In',
+                'Sign Up',
                 style: TextStyle(
                   fontFamily: 'Teacher',
                   fontSize: 30,
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen>{
 
               // Email Field
               TextField(
-                controller: _usernameController,
+                controller: _emailController,
                 decoration: const InputDecoration(
                   labelText: 'EMAIL',
                   border: OutlineInputBorder(),
@@ -78,31 +79,55 @@ class _LoginScreenState extends State<LoginScreen>{
                 ),
               ),
 
+              const SizedBox(height: 15),
+
+              // Password Field
+              TextField(
+                controller: _passwordController,
+                obscureText: obscurePassword,
+                decoration: InputDecoration(
+                  labelText: 'REPEAT PASSWORD',
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      obscurePassword ? Icons.visibility : Icons.visibility_off,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        obscurePassword = !obscurePassword;
+                      });
+                    },
+                  ),
+                ),
+              ),
               const SizedBox(height: 8),
 
               // Remember Me Checkbox 
               Row(
                 children: [
                   Checkbox(
-                    value: rememberMe,
+                    value: agreeToTerms,
                     onChanged: (bool? value) {
                       setState(() {
-                        rememberMe = value ?? false;
+                        agreeToTerms = value ?? false;
                       });
                     },
                   ),
-                  const Text('Remember Me'),
+                  const Expanded(
+                    child: Text(
+                      'I have read and accept the Terms and Conditions',
+                      ),
+                      ),
                 ],
               ),
 
               const SizedBox(height: 15),
 
-              // Sign In Button
+              // Create Account Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle sign in logic here/navigate to next screen
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15),
@@ -110,36 +135,26 @@ class _LoginScreenState extends State<LoginScreen>{
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text('Access Platform'),
+                  child: const Text('Create Account'),
                 ),
-              ),
-
-              const SizedBox(height: 12),
-
-              // Reset My Password
-              Center(child: TextButton(
-                onPressed: (){
-                },
-                  child: const Text('Reset My Password'),
-              ),
               ),
 
               const Spacer(),
 
-              // Sign up now 
+              // Sign in now 
               Center(
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text('Not a member yet?'),
+                    const Text('Are you member?'),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context
-                            , MaterialPageRoute(builder: (context) => const SignUpScreen())
+                            , MaterialPageRoute(builder: (context) => const LoginScreen())
                         );
                         // Navigate to sign up screen
                       },
-                      child: const Text ('Sign up now'),
+                      child: const Text ('Sign in now'),
                       ),
 
                   ],
@@ -152,4 +167,7 @@ class _LoginScreenState extends State<LoginScreen>{
     );
   }
 }
-          
+       
+   
+
+
