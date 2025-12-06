@@ -1,3 +1,4 @@
+import 'package:book_compass_flutter/screens/teacher_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'sign_up.dart'; // Import SignUpScreen
 
@@ -91,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen>{
                       });
                     },
                   ),
+                  // Remember Me Text
                   const Text('Remember Me'),
                 ],
               ),
@@ -102,14 +104,51 @@ class _LoginScreenState extends State<LoginScreen>{
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle sign in logic here/navigate to next screen
+                    // Get input values
+                    final email = _usernameController.text.trim(); // Get email input
+                    final password = _passwordController.text.trim(); // Get password input
+
+                    // Simple validation rules
+                    final emailValid = email.contains('@'); // Simple email validation
+                    final passwordValid = // Simple password validation
+                    password.length >= 6 &&
+                    RegExp(r'[A-Za-z]').hasMatch(password) &&
+                    RegExp(r'[0-9]').hasMatch(password); 
+
+                    if (email.isEmpty || password.isEmpty) { // Empty field control
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Please enter both email and password')),
+                      );
+                      return; 
+                    }
+                    // Email and Password validation
+                    if (!emailValid) { // Email control
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Please enter a valid email address')),
+                      );
+                      return;
+                    }
+                    if (!passwordValid) { // Password control
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Password must be at least 6 characters long and include both letters and numbers')),
+                      );
+                      return;
+                    }
+                    // If validation passes, navigate to TeacherDashboard
+                    Navigator.push(
+                      context, 
+                    MaterialPageRoute(
+                      builder:  (context) => const TeacherDashboard(teacherName: 'Teacher',))
+                    );
                   },
+                  // Button Style
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     shape:RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
+                  // Button Text
                   child: const Text('Access Platform'),
                 ),
               ),

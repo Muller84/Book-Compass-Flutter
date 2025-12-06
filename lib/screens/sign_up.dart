@@ -1,4 +1,5 @@
 import 'package:book_compass_flutter/screens/login_screen.dart';
+import 'package:book_compass_flutter/screens/teacher_dashboard.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget{ 
@@ -9,7 +10,8 @@ class SignUpScreen extends StatefulWidget{
 }
 
 class _SignUpScreenState extends State<SignUpScreen>{
-  // Controllers for text fields   
+  // Controllers for text fields 
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _repeatPasswordController = TextEditingController();
@@ -48,6 +50,15 @@ class _SignUpScreenState extends State<SignUpScreen>{
 
               const SizedBox(height: 20),
 
+              // Name Field
+              TextField(controller: _nameController, decoration: const InputDecoration(
+                labelText: 'NAME',
+                border: OutlineInputBorder(),
+              ),
+              ),
+
+              const SizedBox(height: 15),
+
               // Email Field
               TextField(
                 controller: _emailController,
@@ -81,9 +92,9 @@ class _SignUpScreenState extends State<SignUpScreen>{
 
               const SizedBox(height: 15),
 
-              // Password Field
+              // Repeat Password Field
               TextField(
-                controller: _passwordController,
+                controller: _repeatPasswordController,
                 obscureText: obscurePassword,
                 decoration: InputDecoration(
                   labelText: 'REPEAT PASSWORD',
@@ -113,6 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen>{
                       });
                     },
                   ),
+                  // Remember Me Text
                   const Expanded(
                     child: Text(
                       'I have read and accept the Terms and Conditions',
@@ -128,16 +140,76 @@ class _SignUpScreenState extends State<SignUpScreen>{
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
+                    // Get input values
+                    final name = _nameController.text.trim();
+                    final email = _emailController.text.trim();
+                    final password = _passwordController.text.trim();
+                    final repeatPassword = _repeatPasswordController.text.trim();
+
+                    // Simple validation rules
+                    final emailValid = email.contains('@'); // Simple email validation
+                    final passwordValid = // Simple password validation
+                    password.length >= 6 &&
+                    RegExp(r'[A-Za-z]').hasMatch(password) &&
+                    RegExp(r'[0-9]').hasMatch(password);
+                    
+                    // Validations
+                    if (email.isEmpty || password.isEmpty || repeatPassword.isEmpty) { // Empty field control
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Please enter email and password fields') ),
+                      );
+                      return; 
+                    }
+                    // Email and Password validation
+                    if (!emailValid) { // Email control
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Please enter a valid email address')),
+                      );
+                      return;
+                    }
+                    // Password control
+                    if (!passwordValid) { // Password control
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Password must be at least 6 characters long and include both letters and numbers')),
+                      );
+                      return;
+                    }
+                    // Repeat Password control
+                    if (password != repeatPassword) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Passwords do not match')),
+                      );
+                      return;
+                    }
+                    // Terms and Conditions checkbox control
+                    if (!agreeToTerms) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('You must agree to the Terms and Conditions')),
+                      );
+                      return;
+                    }
+                  // If all validations pass, navigate to Teacher Dashboard
+                  Navigator.push(
+                    context,
+                      MaterialPageRoute(
+                        builder: (context) => TeacherDashboard(
+                          teacherName: name), // Pass teacherName to dashboard
+                       ),
+                  );
                   },
+                 // Button Style
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     shape:RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
+                  // Button Text
                   child: const Text('Create Account'),
+
                 ),
               ),
+
 
               const Spacer(),
 
