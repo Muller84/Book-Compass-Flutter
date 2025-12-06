@@ -43,7 +43,7 @@ class _BookLibraryStateState extends State<BookLibrary>{
           TextField(
             decoration: InputDecoration(
               labelText: 'Search Books',
-              prefix: const Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search),
               filled: true,
               fillColor: Colors.grey[200],
               border: OutlineInputBorder(
@@ -52,7 +52,8 @@ class _BookLibraryStateState extends State<BookLibrary>{
               ),
             ),
             onChanged: (query) {
-              final q(() {
+              final q = query.toLowerCase();
+              setState(() {
                 filteredBooks = allBooks.where((book) {
                   return book.title.toLowerCase().contains(q) ||
                       book.author.toLowerCase().contains(q);
