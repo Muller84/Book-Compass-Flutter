@@ -1,119 +1,159 @@
-import 'package:book_compass_flutter/screens/login_screen.dart';
-import 'package:book_compass_flutter/screens/teacher_dashboard.dart';
-import 'package:flutter/material.dart';
+import 'package:book_compass_flutter/screens/login_screen.dart'; // for navigation back to login
+import 'package:book_compass_flutter/screens/teacher_dashboard.dart'; // for navigation after sign up
+import 'package:book_compass_flutter/theme/app_theme.dart'; // for global constants
+import 'package:flutter/material.dart'; // Flutter material package
+import 'package:book_compass_flutter/widgets/custom_input_field.dart'; // custom input field widget
+import 'package:book_compass_flutter/widgets/primary_button.dart'; // custom primary button widget
+import 'package:book_compass_flutter/services/validation_service.dart'; // validation service
 
-class SignUpScreen extends StatefulWidget{ 
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen>{
-  // Controllers for text fields 
+class _SignUpScreenState extends State<SignUpScreen> {
+  // Controllers for text fields
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _repeatPasswordController = TextEditingController();
+  final TextEditingController _repeatPasswordController =TextEditingController();
 
-  // Condition of checkbox and password window  
+  // Condition of checkbox and password window
   bool agreeToTerms = false; // checkbox state "Agree to Terms"
   bool obscurePassword = true; // Initially hide password (eye)
 
+  void _handleSignUp(BuildContext context) {
+    final name = _nameController.text.trim();
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+    final repeatPassword = _repeatPasswordController.text.trim();
+
+    if (name.isEmpty ||
+        email.isEmpty ||
+        password.isEmpty ||
+        repeatPassword.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill in all fields.')),
+      );
+      return;
+    }
+    if (!ValidationService.isValidEmail(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter a valid email address.'),
+        ),
+      );
+      return;
+    }
+
+    final passwordError = ValidationService.validatePassword(password);
+    if (passwordError != null) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(passwordError)));
+      return;
+    }
+
+    if (password != repeatPassword) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Passwords do not match.')));
+      return;
+    }
+
+    if (!agreeToTerms) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('You must agree to the terms and conditions.'),
+        ),
+      );
+      return;
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) =>
+            TeacherDashboard(teacherName: name), // teacherName from input
+      ),
+    );
+  }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme; // Access the global text theme
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(  24.0),
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Logo 
+              // Logo
               Image.asset(
                 'assets/images/logo.png', 
-                height: 30,
-              ),
+                height: kLogoHeight, // global constant for logo height
+                ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: kSpacingLarge),
 
               // Title
-              const Text(
+              Text( 
                 'Sign Up',
-                style: TextStyle(
-                  fontFamily: 'Teacher',
-                  fontSize: 30,
-                  letterSpacing: 2.0,
+                style: textTheme.titleLarge,
                 ),
-              ),
+                
+                const SizedBox(height: kSpacingLarge), // Spacing between title and fields
 
-              const SizedBox(height: 20),
+              // Name Field (CustomInputField)
+              CustomInputField(
+                controller: _nameController, 
+                labelText: 'NAME'),
 
-              // Name Field
-              TextField(controller: _nameController, decoration: const InputDecoration(
-                labelText: 'NAME',
-                border: OutlineInputBorder(),
-              ),
-              ),
+              const SizedBox(height: kSpacingMedium),
 
-              const SizedBox(height: 15),
-
-              // Email Field
-              TextField(
+              // Email Field (CustomInputField)
+              CustomInputField(
                 controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'EMAIL',
-                  border: OutlineInputBorder(),
-                ),
+                labelText: 'EMAIL',
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: kSpacingMedium),
 
-              // Password Field
-              TextField(
+              // Password Field (CustomInputField with hide/show logic)
+              CustomInputField(
                 controller: _passwordController,
+                labelText: 'PASSWORD',
+                isPassword: true,
                 obscureText: obscurePassword,
-                decoration: InputDecoration(
-                  labelText: 'PASSWORD',
-                  border: const OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      obscurePassword ? Icons.visibility : Icons.visibility_off,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        obscurePassword = !obscurePassword;
-                      });
-                    },
-                  ),
-                ),
+                onToggleVisibility: (value) {
+                  setState(() {
+                    obscurePassword = value;
+                  });
+                },
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: kSpacingMedium),
 
-              // Repeat Password Field
-              TextField(
+              // Repeat Password Field (CustomInputField with hide/show logic)
+              CustomInputField(
                 controller: _repeatPasswordController,
+                labelText: 'REPEAT PASSWORD',
+                isPassword: true,
                 obscureText: obscurePassword,
-                decoration: InputDecoration(
-                  labelText: 'REPEAT PASSWORD',
-                  border: const OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      obscurePassword ? Icons.visibility : Icons.visibility_off,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        obscurePassword = !obscurePassword;
-                      });
-                    },
-                  ),
-                ),
+                onToggleVisibility: (value) {
+                  setState(() {
+                    obscurePassword = value;
+                  });
+                },
               ),
-              const SizedBox(height: 8),
+              
+              const SizedBox(height: kSpacingMedium),
 
-              // Remember Me Checkbox 
+              // Checkbox
               Row(
                 children: [
                   Checkbox(
@@ -124,122 +164,58 @@ class _SignUpScreenState extends State<SignUpScreen>{
                       });
                     },
                   ),
-                  // Remember Me Text
-                  const Expanded(
+                  Expanded(
                     child: Text(
                       'I have read and accept the Terms and Conditions',
-                      ),
-                      ),
+                      style: textTheme.bodyMedium, // sekundary text style from global theme
+                    ),
+                  ),
                 ],
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: kSpacingMedium),
 
-              // Create Account Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Get input values
-                    final name = _nameController.text.trim();
-                    final email = _emailController.text.trim();
-                    final password = _passwordController.text.trim();
-                    final repeatPassword = _repeatPasswordController.text.trim();
-
-                    // Simple validation rules
-                    final emailValid = email.contains('@'); // Simple email validation
-                    final passwordValid = // Simple password validation
-                    password.length >= 6 &&
-                    RegExp(r'[A-Za-z]').hasMatch(password) &&
-                    RegExp(r'[0-9]').hasMatch(password);
-                    
-                    // Validations
-                    if (email.isEmpty || password.isEmpty || repeatPassword.isEmpty) { // Empty field control
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Please enter email and password fields') ),
-                      );
-                      return; 
-                    }
-                    // Email and Password validation
-                    if (!emailValid) { // Email control
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Please enter a valid email address')),
-                      );
-                      return;
-                    }
-                    // Password control
-                    if (!passwordValid) { // Password control
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Password must be at least 6 characters long and include both letters and numbers')),
-                      );
-                      return;
-                    }
-                    // Repeat Password control
-                    if (password != repeatPassword) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Passwords do not match')),
-                      );
-                      return;
-                    }
-                    // Terms and Conditions checkbox control
-                    if (!agreeToTerms) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('You must agree to the Terms and Conditions')),
-                      );
-                      return;
-                    }
-                  // If all validations pass, navigate to Teacher Dashboard
-                  Navigator.push(
-                    context,
-                      MaterialPageRoute(
-                        builder: (context) => TeacherDashboard(
-                          teacherName: name), // Pass teacherName to dashboard
-                       ),
-                  );
-                  },
-                 // Button Style
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    shape:RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  // Button Text
-                  child: const Text('Create Account'),
-
-                ),
+              // Create Account Button (PrimaryButton, calls _handleSignUp)
+              PrimaryButton(
+                text: 'Create Account',
+                onPressed: () => _handleSignUp(context),
               ),
-
 
               const Spacer(),
 
-              // Sign in now 
+              // Sign in now
               Center(
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text('Are you member?'),
+                    Text(
+                      'Are you member?',
+                      style: textTheme.bodyMedium, // sekundary text style from global theme
+                      ),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context
-                            , MaterialPageRoute(builder: (context) => const LoginScreen())
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
                         );
-                        // Navigate to sign up screen
                       },
-                      child: const Text ('Sign in now'),
-                      ),
-
+                      child: Text(
+                        'Sign in now',
+                        style: textTheme.bodyMedium?.copyWith(
+                          color: kPrimaryGreen, // primary color from global theme
+                          fontWeight: FontWeight.w600,
+                        ),
+                    ),
+                    ),
                   ],
-        ),
-        ),
-        ],
-        ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-       
-   
-
-

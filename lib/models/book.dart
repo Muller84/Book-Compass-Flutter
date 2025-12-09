@@ -29,6 +29,6 @@ class Book {
       tags: List<String>.from(json['tags'] as List),
       description: json['description'] as String,
       rating: (json['rating'] as num).toDouble(),
-    ); 
+    );
   }
 }
