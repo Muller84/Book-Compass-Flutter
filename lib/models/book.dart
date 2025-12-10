@@ -7,6 +7,7 @@ class Book {
   final List<String> tags;
   final String description;
   final double rating;
+  final String? coverImage; 
 
   Book({
     required this.id,
@@ -17,6 +18,7 @@ class Book {
     required this.tags,
     required this.description,
     required this.rating,
+    this .coverImage,
   });
 
   factory Book.fromJson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class Book {
       tags: List<String>.from(json['tags'] as List),
       description: json['description'] as String,
       rating: (json['rating'] as num).toDouble(),
+      coverImage: json['coverImage'], // reading from JSON
     );
   }
 }

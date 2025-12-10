@@ -1,0 +1,576 @@
+{
+  "Reception": [
+    {
+      "name": "Jessica Walker",
+      "age": 4,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "History",
+        "Animals",
+        "Sports"
+      ]
+    },
+    {
+      "name": "Sophia Hall",
+      "age": 4,
+      "avatar": "assets/avatars/avatar5.jpg",
+      "interests": [
+        "Technology",
+        "Science",
+        "Sports"
+      ]
+    },
+    {
+      "name": "George Williams",
+      "age": 4,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Technology",
+        "History",
+        "Music"
+      ]
+    },
+    {
+      "name": "Noah Davies",
+      "age": 4,
+      "avatar": "assets/avatars/avatar1.jpg",
+      "interests": [
+        "Sports",
+        "Space",
+        "Adventure"
+      ]
+    },
+    {
+      "name": "Sophia Thompson",
+      "age": 4,
+      "avatar": "assets/avatars/avatar1.jpg",
+      "interests": [
+        "Animals",
+        "Music",
+        "Technology"
+      ]
+    },
+    {
+      "name": "James Allen",
+      "age": 4,
+      "avatar": "assets/avatars/avatar2.jpg",
+      "interests": [
+        "Adventure",
+        "Music",
+        "Art"
+      ]
+    },
+    {
+      "name": "George Green",
+      "age": 5,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Space",
+        "Adventure",
+        "Art"
+      ]
+    },
+    {
+      "name": "Leo Johnson",
+      "age": 5,
+      "avatar": "assets/avatars/avatar6.jpg",
+      "interests": [
+        "Animals",
+        "Art",
+        "Sports"
+      ]
+    }
+  ],
+  "Year 1": [
+    {
+      "name": "Evie Young",
+      "age": 5,
+      "avatar": "assets/avatars/avatar1.jpg",
+      "interests": [
+        "Music",
+        "Adventure",
+        "Art"
+      ]
+    },
+    {
+      "name": "James Green",
+      "age": 5,
+      "avatar": "assets/avatars/avatar2.jpg",
+      "interests": [
+        "Music",
+        "Adventure",
+        "Space"
+      ]
+    },
+    {
+      "name": "Ruby Hall",
+      "age": 6,
+      "avatar": "assets/avatars/avatar8.jpg",
+      "interests": [
+        "Space",
+        "Sports",
+        "Music"
+      ]
+    },
+    {
+      "name": "Grace Jones",
+      "age": 5,
+      "avatar": "assets/avatars/avatar2.jpg",
+      "interests": [
+        "Space",
+        "Music",
+        "Animals"
+      ]
+    },
+    {
+      "name": "Poppy Green",
+      "age": 6,
+      "avatar": "assets/avatars/avatar8.jpg",
+      "interests": [
+        "Nature",
+        "Art",
+        "Science"
+      ]
+    },
+    {
+      "name": "Oliver Wright",
+      "age": 5,
+      "avatar": "assets/avatars/avatar2.jpg",
+      "interests": [
+        "Sports",
+        "Animals",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Isla Allen",
+      "age": 5,
+      "avatar": "assets/avatars/avatar12.jpg",
+      "interests": [
+        "Sports",
+        "Animals",
+        "Adventure"
+      ]
+    },
+    {
+      "name": "Jack Davies",
+      "age": 5,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Animals",
+        "Adventure",
+        "Technology"
+      ]
+    }
+  ],
+  "Year 2": [
+    {
+      "name": "Sophia Young",
+      "age": 7,
+      "avatar": "assets/avatars/avatar1.jpg",
+      "interests": [
+        "Adventure",
+        "Sports",
+        "Science"
+      ]
+    },
+    {
+      "name": "Mia Green",
+      "age": 7,
+      "avatar": "assets/avatars/avatar10.jpg",
+      "interests": [
+        "Music",
+        "Art",
+        "Science"
+      ]
+    },
+    {
+      "name": "Amelia Brown",
+      "age": 6,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Adventure",
+        "Animals",
+        "Art"
+      ]
+    },
+    {
+      "name": "Ella Allen",
+      "age": 6,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "Animals",
+        "Nature",
+        "Science"
+      ]
+    },
+    {
+      "name": "Poppy Allen",
+      "age": 6,
+      "avatar": "assets/avatars/avatar1.jpg",
+      "interests": [
+        "Art",
+        "Animals",
+        "Music"
+      ]
+    },
+    {
+      "name": "Emily Thompson",
+      "age": 6,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "Sports",
+        "Animals",
+        "Music"
+      ]
+    },
+    {
+      "name": "Lily Taylor",
+      "age": 7,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Nature",
+        "Science",
+        "Sports"
+      ]
+    },
+    {
+      "name": "Oscar Green",
+      "age": 6,
+      "avatar": "assets/avatars/avatar4.jpg",
+      "interests": [
+        "Music",
+        "Science",
+        "Space"
+      ]
+    }
+  ],
+  "Year 3": [
+    {
+      "name": "Olivia Evans",
+      "age": 7,
+      "avatar": "assets/avatars/avatar4.jpg",
+      "interests": [
+        "Space",
+        "Science",
+        "Art"
+      ]
+    },
+    {
+      "name": "Henry Walker",
+      "age": 7,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Sports",
+        "History",
+        "Space"
+      ]
+    },
+    {
+      "name": "Isla Johnson",
+      "age": 8,
+      "avatar": "assets/avatars/avatar3.jpg",
+      "interests": [
+        "Animals",
+        "Music",
+        "Technology"
+      ]
+    },
+    {
+      "name": "Jessica Evans",
+      "age": 7,
+      "avatar": "assets/avatars/avatar1.jpg",
+      "interests": [
+        "History",
+        "Science",
+        "Sports"
+      ]
+    },
+    {
+      "name": "Lily Roberts",
+      "age": 8,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Art",
+        "History",
+        "Technology"
+      ]
+    },
+    {
+      "name": "Chloe Davies",
+      "age": 7,
+      "avatar": "assets/avatars/avatar10.jpg",
+      "interests": [
+        "Adventure",
+        "History",
+        "Technology"
+      ]
+    },
+    {
+      "name": "Ava King",
+      "age": 8,
+      "avatar": "assets/avatars/avatar3.jpg",
+      "interests": [
+        "Technology",
+        "Space",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Sophie Wright",
+      "age": 7,
+      "avatar": "assets/avatars/avatar3.jpg",
+      "interests": [
+        "Science",
+        "History",
+        "Music"
+      ]
+    }
+  ],
+  "Year 4": [
+    {
+      "name": "Leo Smith",
+      "age": 9,
+      "avatar": "assets/avatars/avatar3.jpg",
+      "interests": [
+        "Technology",
+        "Space",
+        "Science"
+      ]
+    },
+    {
+      "name": "William Taylor",
+      "age": 8,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Nature",
+        "Space",
+        "Science"
+      ]
+    },
+    {
+      "name": "Henry Hall",
+      "age": 9,
+      "avatar": "assets/avatars/avatar11.jpg",
+      "interests": [
+        "Technology",
+        "Space",
+        "Animals"
+      ]
+    },
+    {
+      "name": "Sophia Evans",
+      "age": 9,
+      "avatar": "assets/avatars/avatar4.jpg",
+      "interests": [
+        "Space",
+        "Nature",
+        "Adventure"
+      ]
+    },
+    {
+      "name": "Charlotte Williams",
+      "age": 8,
+      "avatar": "assets/avatars/avatar8.jpg",
+      "interests": [
+        "Music",
+        "Adventure",
+        "Art"
+      ]
+    },
+    {
+      "name": "William Williams",
+      "age": 9,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "Nature",
+        "Science",
+        "Music"
+      ]
+    },
+    {
+      "name": "Mia Wright",
+      "age": 9,
+      "avatar": "assets/avatars/avatar12.jpg",
+      "interests": [
+        "Sports",
+        "History",
+        "Science"
+      ]
+    },
+    {
+      "name": "Ava Thompson",
+      "age": 9,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "Technology",
+        "Art",
+        "Nature"
+      ]
+    }
+  ],
+  "Year 5": [
+    {
+      "name": "Ava Roberts",
+      "age": 10,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "Animals",
+        "Nature",
+        "Space"
+      ]
+    },
+    {
+      "name": "James Wilson",
+      "age": 10,
+      "avatar": "assets/avatars/avatar12.jpg",
+      "interests": [
+        "Music",
+        "History",
+        "Adventure"
+      ]
+    },
+    {
+      "name": "George Walker",
+      "age": 10,
+      "avatar": "assets/avatars/avatar12.jpg",
+      "interests": [
+        "Science",
+        "Animals",
+        "Space"
+      ]
+    },
+    {
+      "name": "Grace King",
+      "age": 10,
+      "avatar": "assets/avatars/avatar9.jpg",
+      "interests": [
+        "Science",
+        "Sports",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Charlie Jones",
+      "age": 10,
+      "avatar": "assets/avatars/avatar8.jpg",
+      "interests": [
+        "Science",
+        "Sports",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Emily Davies",
+      "age": 10,
+      "avatar": "assets/avatars/avatar12.jpg",
+      "interests": [
+        "Art",
+        "Music",
+        "Animals"
+      ]
+    },
+    {
+      "name": "Mia Davies",
+      "age": 9,
+      "avatar": "assets/avatars/avatar8.jpg",
+      "interests": [
+        "Art",
+        "Space",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Chloe Evans",
+      "age": 9,
+      "avatar": "assets/avatars/avatar10.jpg",
+      "interests": [
+        "Space",
+        "Animals",
+        "Sports"
+      ]
+    }
+  ],
+  "Year 6": [
+    {
+      "name": "Poppy Davies",
+      "age": 10,
+      "avatar": "assets/avatars/avatar12.jpg",
+      "interests": [
+        "Space",
+        "Nature",
+        "Animals"
+      ]
+    },
+    {
+      "name": "Jessica Walker",
+      "age": 11,
+      "avatar": "assets/avatars/avatar11.jpg",
+      "interests": [
+        "Technology",
+        "History",
+        "Adventure"
+      ]
+    },
+    {
+      "name": "Henry King",
+      "age": 11,
+      "avatar": "assets/avatars/avatar6.jpg",
+      "interests": [
+        "Space",
+        "Art",
+        "Sports"
+      ]
+    },
+    {
+      "name": "James Roberts",
+      "age": 11,
+      "avatar": "assets/avatars/avatar3.jpg",
+      "interests": [
+        "Technology",
+        "History",
+        "Music"
+      ]
+    },
+    {
+      "name": "Henry Smith",
+      "age": 10,
+      "avatar": "assets/avatars/avatar4.jpg",
+      "interests": [
+        "Adventure",
+        "Animals",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Oliver Wilson",
+      "age": 10,
+      "avatar": "assets/avatars/avatar10.jpg",
+      "interests": [
+        "Adventure",
+        "Science",
+        "History"
+      ]
+    },
+    {
+      "name": "Chloe Brown",
+      "age": 11,
+      "avatar": "assets/avatars/avatar7.jpg",
+      "interests": [
+        "Nature",
+        "Adventure",
+        "History"
+      ]
+    },
+    {
+      "name": "Charlotte Allen",
+      "age": 10,
+      "avatar": "assets/avatars/avatar3.jpg",
+      "interests": [
+        "Music",
+        "Nature",
+        "History"
+      ]
+    }
+  ]
+}

@@ -21,6 +21,7 @@ final ThemeData appTheme = ThemeData(
   scaffoldBackgroundColor: kBackgroundCream,
   primaryColor: kPrimaryGreen,
   fontFamily: 'Nunito',
+
   textTheme: const TextTheme(
     headlineLarge: TextStyle(
       fontSize: 32,
@@ -50,7 +51,8 @@ final ThemeData appTheme = ThemeData(
       letterSpacing: 0.5,
       color: Colors.white,
     ),
-  ),
+  ), // TextTheme
+
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
     fillColor: kInputFill,
@@ -75,7 +77,8 @@ final ThemeData appTheme = ThemeData(
       color: kTextSecondary,
       fontSize: 14,
     ),
-  ),
+  ), // InputDecorationTheme
+
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: kPrimaryGreen,
@@ -91,5 +94,17 @@ final ThemeData appTheme = ThemeData(
         letterSpacing: 0.5,
       ),
     ),
-  ),
+  ), // ElevatedButtonThemeData
+
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  backgroundColor: kBackgroundCream,
+  selectedItemColor: kPrimaryGreen,
+  unselectedItemColor: kTextSecondary,
+  showUnselectedLabels: true,
+  type: BottomNavigationBarType.fixed,
+  elevation: 0,
+), // BottomNavigationBarThemeData
+
 );
+
+

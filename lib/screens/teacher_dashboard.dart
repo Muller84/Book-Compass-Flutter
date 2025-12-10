@@ -1,6 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // Flutter widgets
 import 'package:book_compass_flutter/screens/login_screen.dart';
 import 'package:book_compass_flutter/theme/app_theme.dart';
+import 'package:book_compass_flutter/widgets/app_bottom_nav_bar.dart';
+import 'package:book_compass_flutter/widgets/animated_book_covers.dart';
+import 'package:book_compass_flutter/utils/data_loader.dart'; // dataset with students
+import 'package:book_compass_flutter/screens/my_class_screen.dart';
 
 class TeacherDashboard extends StatefulWidget { // stateful widget
   final String teacherName; // add field teacherName
@@ -11,8 +15,25 @@ class TeacherDashboard extends StatefulWidget { // stateful widget
 }
 
 class _TeacherDashboardState extends State<TeacherDashboard> { // state class
-  int _currentIndex =
-      0; // 0 = Dashboard, 1 = Students, 2 = Library, 3 = Feedback
+  // ignore: unused_field
+  final int _currentIndex = 0; // 0 = Dashboard, 1 = Students, 2 = Library, 3 = Feedback
+
+  // Variable to store the dataset loaded from the JSON file
+  Map<String, dynamic>? _schoolDataset;
+
+  @override
+  void initState() {
+    super.initState();
+    // Load dataset at screen startup (asynchronously from assets/data/school dataset.json)
+    loadSchoolDataset().then((data) {
+      if (mounted) {
+        // If the widget still exists, we save the data to the state
+        setState(() {
+          _schoolDataset = data;
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +58,8 @@ class _TeacherDashboardState extends State<TeacherDashboard> { // state class
 
                   PopupMenuButton<String>(
                     icon: const CircleAvatar(
-                      child: Icon(Icons.person),
+                      child: Icon(Icons.person,
+                      color: kTextSecondary),
                     ), // Profile icon
 
                     onSelected: (value) {
@@ -74,47 +96,63 @@ class _TeacherDashboardState extends State<TeacherDashboard> { // state class
                 style: textTheme.bodyMedium,
               ),
 
-              const SizedBox(height: kSpacingLarge),
+              const SizedBox(height: kSpacingExtraLarge),
 
               Text(
                 'Select your next step:',
-                style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: textTheme.bodyLarge?.copyWith(
+                  fontWeight: FontWeight.bold
+                  ),
               ),
 
-              Expanded(
-                child: Center(
-                  child: Text(
-                    _currentIndex == 0
-                        ? 'Dashboard content'
-                        : _currentIndex == 1
-                        ? 'Profile content'
-                        : _currentIndex == 2
-                        ? 'Book Library Content'
-                        : 'Parent Feedback content',
-                    style: textTheme.titleLarge,
-                  ),
-                ),
-              ),
+              const SizedBox(height: kSpacingMedium),
+
+              // Fast links
+              Row(
+                children: [
+                  // "My Class" button – opens a screen with a list of classes and students
+                  Expanded(child: ElevatedButton.icon(
+                    onPressed: () {
+                      if (_schoolDataset == null) return; // dataset not loaded yet
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => MyClassScreen(schoolClasses: _schoolDataset!),
+                          ),
+                          );
+                          },
+                          icon: Icon(Icons.group), // group icon
+                          label: Text('My Class'))), // button text
+                          
+                          const SizedBox(width: 8), // space between buttons
+                          
+                          // "Book Tips" button – empty for now, ready for future functionality
+                          Expanded(child: ElevatedButton.icon(
+                            onPressed: () {}, // TODO: add logic
+                            icon: Icon(Icons.lightbulb), // light bulb icon
+                            label: Text('Book Tips'))),
+                            
+                            const SizedBox(width: 8), // space between buttons
+                            
+                            // "Feedback" button – empty for now
+                            Expanded(child: ElevatedButton.icon(
+                              onPressed: () {}, // TODO: add logic
+                              icon: Icon(Icons.feedback), // feedback icon
+                              label: Text('Feedback'))),
+                              ],
+                              ),
+                              
+                              const SizedBox(height: kSpacingSmall),
+                              
+                              // Animated book covers – decorative widget on the dashboard
+                              const AnimatedBookCovers(),
             ],
           ),
         ),
       ),
+      // Bottom navigation bar of the application
+      // 0 active first tab (Dashboard)
+      bottomNavigationBar: const AppBottomNavBar(currentIndex: 0),
 
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(  context).scaffoldBackgroundColor,
-        type: BottomNavigationBarType.fixed,
-        elevation: 0,
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() => _currentIndex = index);
-        },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Feedback'),
-        ],
-      ),
     );
   }
 }
