@@ -26,26 +26,25 @@ class _LoginScreenState extends State<LoginScreen> {
     final email = _usernameController.text.trim();
     final password = _passwordController.text.trim();
 
-    // Calling the validation service
+    // VALIDATION
+    final isValidEmail = ValidationService.isValidEmail(email);
     final passwordError = ValidationService.validatePassword(password);
 
-    // Static validation checks
-    if (!ValidationService.isValidEmail(email)) {
+     // Email validation
+    if (!isValidEmail) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please enter a valid email address'),
-        ),
+        const SnackBar(content: Text('Please enter a valid email address')),
       );
       return;
     }
-
+    // Password validation
     if (passwordError != null) {
       ScaffoldMessenger.of(context,).
       showSnackBar(SnackBar(content: Text(passwordError)));
       return;
     }
 
-    // Simulate successful login and navigate to TeacherDashboard
+    // Everythink is valid - navigate
     Navigator.push(
       context,
       MaterialPageRoute(

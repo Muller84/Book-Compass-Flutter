@@ -87,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,13 +110,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               // Name Field (CustomInputField)
               CustomInputField(
-                controller: _nameController, 
-                labelText: 'NAME'),
+                key: const Key('nameField'),
+                controller: _nameController,
+                labelText: 'NAME',
+              ),
 
               const SizedBox(height: kSpacingMedium),
 
               // Email Field (CustomInputField)
               CustomInputField(
+                key: const Key('emailField'),
                 controller: _emailController,
                 labelText: 'EMAIL',
               ),
@@ -125,6 +128,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               // Password Field (CustomInputField with hide/show logic)
               CustomInputField(
+                key: const Key('passwordField'),
                 controller: _passwordController,
                 labelText: 'PASSWORD',
                 isPassword: true,
@@ -140,6 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               // Repeat Password Field (CustomInputField with hide/show logic)
               CustomInputField(
+                key: const Key('repeatPasswordField'),
                 controller: _repeatPasswordController,
                 labelText: 'REPEAT PASSWORD',
                 isPassword: true,
@@ -181,7 +186,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 onPressed: () => _handleSignUp(context),
               ),
 
-              const Spacer(),
+              const SizedBox(height: kSpacingLarge,),
 
               // Sign in now
               Center(
