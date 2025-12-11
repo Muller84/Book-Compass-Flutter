@@ -12,6 +12,7 @@ class BookCompassApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Book Compass',
       theme: appTheme, // Apply the global theme
       home: const WelcomeScreen(),
