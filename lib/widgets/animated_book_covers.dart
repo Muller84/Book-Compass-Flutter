@@ -1,35 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AnimatedBookCovers extends StatefulWidget {
+class AnimatedBookCovers extends StatelessWidget {
   const AnimatedBookCovers({super.key});
-
-  @override
-  State<AnimatedBookCovers> createState() => _AnimatedBookCoversState();
-}
-
-class _AnimatedBookCoversState extends State<AnimatedBookCovers>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    )..repeat(reverse: true);
-
-    _animation = Tween(begin: -0.05, end: 0.05).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOutSine),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,41 +12,47 @@ class _AnimatedBookCoversState extends State<AnimatedBookCovers>
     ];
 
     return SizedBox(
-      height: 320,
+      height: 250,
       child: Center(
         child: Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
           children: [
-            for (int index = 0; index < images.length; index++)
-              _animatedBook(images[index], index),
+            // spodní karta
+            Positioned(
+              left: 0,
+              child: _cardImage(images[0], 0.85, -0.1),
+            ),
+            // prostřední karta
+            Positioned(
+              left: 60,
+              child: _cardImage(images[1], 0.95, 0.0),
+            ),
+            // horní karta
+            Positioned(
+              left: 120,
+              child: _cardImage(images[2], 1.0, 0.1),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _animatedBook(String imagePath, int index) {
-    final offsetX = (index - 1) * 90.0;
-
-    return Transform.translate(
-      offset: Offset(offsetX, 0),
-      child: AnimatedBuilder(
-        animation: _animation,
-        builder: (context, child) {
-          return Transform.rotate(
-            angle: _animation.value,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                imagePath,
-                width: 140,
-                height: 200,
-                fit: BoxFit.cover,
-              ),
-            ),
-          );
-        },
+  Widget _cardImage(String path, double scale, double angle) {
+    return Transform.scale(
+      scale: scale,
+      child: Transform.rotate(
+        angle: angle,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            path,
+            width: 150,
+            height: 210,
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }
