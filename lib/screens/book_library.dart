@@ -6,7 +6,8 @@ import 'package:book_compass_flutter/models/book.dart'; // Book model
 import 'package:book_compass_flutter/widgets/app_bottom_nav_bar.dart';
 
 class BookLibrary extends StatefulWidget {
-  const BookLibrary({super.key});
+  final Map<String, dynamic>? schoolClasses;
+  const BookLibrary({super.key, this.schoolClasses});
 
   @override
   State<BookLibrary> createState() => _BookLibraryStateState();
@@ -100,24 +101,50 @@ class _BookLibraryStateState extends State<BookLibrary> {
 
               // Dynamic book list – responds to searches
               Expanded(
-                child: ListView.builder(
+                child: ListView.separated(
                   itemCount: filteredBooks.length,
+                  separatorBuilder: (context, index) => const SizedBox(height: 8),
                   itemBuilder: (context, index) {
                     final book = filteredBooks[index];
-                    return ListTile(
-                      title: Text(book.title),
-                      subtitle: Text('${book.author} • Level ${book.level}'),
-                    );
-                  },
-                ),
-              ),
+                    return Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 2,
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: kPrimaryColor.withValues(alpha: 0.1),
+                          child: Text(
+                            book.author.isNotEmpty
+                              ? book.author.characters.first.toUpperCase() 
+                              : '?',
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        title: Text(book.title),
+                        subtitle: Text(
+                          '${book.author} • Level ${book.level} • ${book.category}',
+                          ),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () { // TODO book's detail
+          },
+        ),
+      );
+    },
+  ),
+),
             ],
           ),
         ),
       ),
       
       // Application bottom navigation bar
-      bottomNavigationBar: const AppBottomNavBar(currentIndex: 2),
+      bottomNavigationBar: AppBottomNavBar(
+        currentIndex: 2,
+        schoolClasses: widget.schoolClasses,
+      ),
     );
   }
 }

@@ -7,6 +7,8 @@ const kTextMain = Color(0xFF222222); // main text color
 const kTextSecondary = Color(0xFF777777); // secondary text color
 const kInputFill = Color(0xFFF5F5F5); // input field fill color
 const kInputBorder = Color(0xFFDDDDDD); // input field border color
+const kPrimaryColor = Color.fromARGB(255, 8, 160, 69);
+
 
 const kLogoHeight = 100.0; // height of the logo image
 
@@ -103,7 +105,8 @@ final ThemeData appTheme = ThemeData(
   showUnselectedLabels: true,
   type: BottomNavigationBarType.fixed,
   elevation: 0,
-), // BottomNavigationBarThemeData
+),
+ // BottomNavigationBarThemeData
 
 );
 

@@ -121,7 +121,7 @@ class WelcomeScreen extends StatelessWidget {
           Text(
             'Welcome',
             style: textTheme.headlineLarge?.copyWith(
-              fontSize: 60,
+              fontSize: 50,
               letterSpacing: 2.0,
             ),
             textAlign: TextAlign.center,

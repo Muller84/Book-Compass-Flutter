@@ -3,7 +3,8 @@ import 'package:book_compass_flutter/theme/app_theme.dart';
 import 'package:book_compass_flutter/widgets/app_bottom_nav_bar.dart';
 
 class ParentFeedback extends StatefulWidget {
-  const ParentFeedback({super.key,});
+  final Map<String, dynamic>? schoolClasses;
+  const ParentFeedback({super.key, this.schoolClasses});
 
   @override
   State<ParentFeedback> createState() => _ParentFeedbackState(); // create state
@@ -36,7 +37,7 @@ class _ParentFeedbackState extends State<ParentFeedback> {
 
               const SizedBox(height: kSpacingMedium),
 
-              Center(child: Text ('Parent Feedback Screen',
+              Center(child: Text ('Reading Feedback',
               style: textTheme.titleLarge,
               ),
               ),
@@ -47,8 +48,11 @@ class _ParentFeedbackState extends State<ParentFeedback> {
 
 
                   // Bottom navigation bar
-                  bottomNavigationBar: const AppBottomNavBar(currentIndex: 3
-                  ),
+                  bottomNavigationBar: AppBottomNavBar(
+                    currentIndex: 3,
+                    schoolClasses: widget.schoolClasses,
+                      ),
+
               );
   }
 }

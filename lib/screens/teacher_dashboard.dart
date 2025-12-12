@@ -6,7 +6,6 @@ import 'package:book_compass_flutter/theme/app_theme.dart';
 import 'package:book_compass_flutter/widgets/app_bottom_nav_bar.dart';
 import 'package:book_compass_flutter/widgets/animated_book_covers.dart';
 import 'package:book_compass_flutter/utils/data_loader.dart';
-import 'package:book_compass_flutter/screens/my_class_screen.dart';
 
 class TeacherDashboard extends StatefulWidget {
   final String teacherName;
@@ -77,6 +76,20 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
+    // WHEN `_schoolDataset` IS STILL NULL → loader
+    if (_schoolDataset == null) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      body: const Center(
+        child: CircularProgressIndicator(),
+      ),
+      bottomNavigationBar: const AppBottomNavBar(
+        currentIndex: 0,
+      ),
+    );
+  }
+
+    // HOWEVER `_schoolDataset` IS LOADED → original UI
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
@@ -150,26 +163,6 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
               // Fast links
               Row(
                 children: [
-                  // My Class – from school_dataset.json
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        if (_schoolDataset == null) return;
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => MyClassScreen(
-                              schoolClasses: _schoolDataset!,
-                            ),
-                          ),
-                        );
-                      },
-                      icon: const Icon(Icons.group),
-                      label: const Text('My Class'),
-                    ),
-                  ),
-
-                  const SizedBox(width: 8),
-
                   // Book Tips – from books.json
                   Expanded(
                     child: ElevatedButton.icon(
@@ -185,7 +178,12 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        // TODO: add logic
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('No new feedback yet'),
+                            duration: Duration(seconds: 2),
+                            ),
+                            );
                       },
                       icon: const Icon(Icons.feedback),
                       label: const Text('Feedback'),
@@ -214,7 +212,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 6,
                     offset: const Offset(0, 3),
                   ),
@@ -246,7 +244,10 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
           ),
         ),
       ),
-      bottomNavigationBar: const AppBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: AppBottomNavBar(
+        currentIndex: 0,
+        schoolClasses: _schoolDataset,
+        ),
     );
   }
 }

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:book_compass_flutter/screens/teacher_dashboard.dart';
-import 'package:book_compass_flutter/screens/student_profile.dart';
+import 'package:book_compass_flutter/screens/my_class_screen.dart';
 import 'package:book_compass_flutter/screens/book_library.dart';
 import 'package:book_compass_flutter/screens/parent_feedback.dart';
 
 class AppBottomNavBar extends StatelessWidget {
   final int currentIndex; // index of the currently selected bookmark
+  final Map<String, dynamic>? schoolClasses;
 
-  const AppBottomNavBar({super.key, required this.currentIndex}); // constructor with mandatory index
+  const AppBottomNavBar({
+    super.key, 
+    required this.currentIndex,
+    this.schoolClasses,
+    }); // constructor with mandatory index
 
   @override
   Widget build(BuildContext context) {
@@ -25,26 +30,36 @@ class AppBottomNavBar extends StatelessWidget {
             ),
           );
         } else if (index == 1 && currentIndex != 1) {
-          Navigator.pushReplacement( // switches to StudentProfile
+          if (schoolClasses == null) return;
+          Navigator.push( // switches to StudentProfile
             context,
-            MaterialPageRoute(builder: (context) => const StudentProfile()),
+            MaterialPageRoute(
+              builder: (context) => MyClassScreen(
+                schoolClasses: schoolClasses!,
+              )),
           );
         } else if (index == 2 && currentIndex != 2) {
           Navigator.pushReplacement( // switches to BookLibrary
             context,
-            MaterialPageRoute(builder: (context) => const BookLibrary()),
+            MaterialPageRoute(
+              builder: (context) => BookLibrary(
+                schoolClasses: schoolClasses,
+              )),
           );
         } else if (index == 3 && currentIndex != 3) {
           Navigator.pushReplacement( // switches to ParentFeedback
             context,
-            MaterialPageRoute(builder: (context) => const ParentFeedback()),
+            MaterialPageRoute(
+              builder: (context) => ParentFeedback(
+                schoolClasses: schoolClasses,
+              )),
           );
         }
       },
       // bookmarks
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'My class'),
         BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Library'),
         BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Feedback'),
       ],
