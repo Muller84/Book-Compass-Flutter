@@ -20,7 +20,8 @@ class AppBottomNavBar extends StatelessWidget {
       currentIndex: currentIndex, // sets the active bookmark
       type: BottomNavigationBarType.fixed, // all bookmarks are visible
       elevation: 0,
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor, // background color according to theme
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+       // background color according to theme
       onTap: (index) { // action when clicking on a bookmark
         if (index == 0 && currentIndex != 0) {
           Navigator.pushReplacement( // switches to TeacherDashboard
@@ -30,7 +31,15 @@ class AppBottomNavBar extends StatelessWidget {
             ),
           );
         } else if (index == 1 && currentIndex != 1) {
-          if (schoolClasses == null) return;
+          if (schoolClasses == null) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Class data is not available zet. Please try again.'),
+                duration: Duration(seconds: 2),
+                ),
+                );
+                return;
+          }
           Navigator.push( // switches to StudentProfile
             context,
             MaterialPageRoute(
@@ -39,7 +48,7 @@ class AppBottomNavBar extends StatelessWidget {
               )),
           );
         } else if (index == 2 && currentIndex != 2) {
-          Navigator.pushReplacement( // switches to BookLibrary
+          Navigator.push( // switches to BookLibrary
             context,
             MaterialPageRoute(
               builder: (context) => BookLibrary(
@@ -47,7 +56,7 @@ class AppBottomNavBar extends StatelessWidget {
               )),
           );
         } else if (index == 3 && currentIndex != 3) {
-          Navigator.pushReplacement( // switches to ParentFeedback
+          Navigator.push( // switches to ParentFeedback
             context,
             MaterialPageRoute(
               builder: (context) => ParentFeedback(

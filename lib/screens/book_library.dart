@@ -41,6 +41,8 @@ class _BookLibraryStateState extends State<BookLibrary> {
 
   @override
   Widget build(BuildContext context) {
+    print('BookLibrary schoolClasses: ${widget.schoolClasses?.keys}');
+
     final textTheme = Theme.of(context).textTheme;  // apply global text styles
 
     return Scaffold(
