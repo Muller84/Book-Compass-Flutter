@@ -13,21 +13,26 @@ class BookLibrary extends StatefulWidget {
 }
 
 class _BookLibraryStateState extends State<BookLibrary> {
-  List<Book> allBooks = []; // all books from JSON
-  List<Book> filteredBooks = []; // filtered books for search
-  // ignore: unused_field
-  final int _currentIndex = 2; // 0 = Dashboard, 1 = Students, 2 = Library, 3 = Feedback
+  // Complete list of books loaded from JSON file (application source data)
+  List<Book> allBooks = []; 
+
+  // Currently filtered list of books based on user search
+  List<Book> filteredBooks = []; 
 
   @override
-  void initState() { // initialize state
+  void initState() { 
     super.initState();
+    // When initializing the screen, load books from assets
     loadBooks();
   }
 
   Future<void> loadBooks() async {
+    // Load the JSON file with books from assets
     final jsonString = await rootBundle.loadString('assets/data/books.json');
     final List<dynamic> data = jsonDecode(jsonString);
+    // Convert JSON objects to Book model instance
     allBooks = data.map((e) => Book.fromJson(e)).toList();
+    // Set initial state - show all books
     setState(() {
       filteredBooks = allBooks;
     });
@@ -35,7 +40,7 @@ class _BookLibraryStateState extends State<BookLibrary> {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;  // get text from global theme
+    final textTheme = Theme.of(context).textTheme;  // apply global text styles
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -45,7 +50,9 @@ class _BookLibraryStateState extends State<BookLibrary> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(children: [Image.asset(
+              Row(
+                // Top row with application logo
+                children: [Image.asset(
                 'assets/images/logo.png',
                 height: kLogoHeight,
                 ),
@@ -55,6 +62,7 @@ class _BookLibraryStateState extends State<BookLibrary> {
 
               const SizedBox(height: kSpacingMedium),
 
+              // Screen title
               Center(
                 child: Text(
                   'Book Library',
@@ -64,7 +72,7 @@ class _BookLibraryStateState extends State<BookLibrary> {
 
               const SizedBox(height: kSpacingMedium),
 
-              // Search bar
+              // Search field to filter books by title or author
               TextField(
                 decoration: InputDecoration( // search input decoration
                   labelText: 'Search Books',
@@ -90,7 +98,7 @@ class _BookLibraryStateState extends State<BookLibrary> {
 
               const SizedBox(height: 16),
 
-              // List of books
+              // Dynamic book list – responds to searches
               Expanded(
                 child: ListView.builder(
                   itemCount: filteredBooks.length,
@@ -107,7 +115,8 @@ class _BookLibraryStateState extends State<BookLibrary> {
           ),
         ),
       ),
-      // Bottom navigation bar
+      
+      // Application bottom navigation bar
       bottomNavigationBar: const AppBottomNavBar(currentIndex: 2),
     );
   }

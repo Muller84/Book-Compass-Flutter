@@ -40,7 +40,7 @@ class _AnimatedBookCoversState extends State<AnimatedBookCovers>
     ];
 
     return SizedBox(
-      height: 290,
+      height: 320,
       child: Center(
         child: Stack(
           alignment: Alignment.center,
