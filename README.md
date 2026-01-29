@@ -2,12 +2,12 @@
 
 <p align="center">
   <span style="display:inline-block; text-align:center; margin-right:20px;">
-    <img src="URL1" width="100"><br>
+    <img src="https://github.com/user-attachments/assets/d7c08a4e-211f-45da-8dd7-035885f71c47" width="100"><br>
     <sub>Welcome Screen</sub>
   </span>
 
   <span style="display:inline-block; text-align:center;">
-    <img src="URL2" width="100"><br>
+    <img src="https://github.com/user-attachments/assets/79319c43-9160-4a24-a507-ca51c63c527d" width="100"><br>
     <sub>Sign Up Screen</sub>
   </span>
 </p>
