@@ -1,6 +1,7 @@
 # Book Compass 🧭
 
-<img width="250" alt="welcome_screen" src="https://github.com/user-attachments/assets/3420f86e-23d0-478b-a4ba-ae9cb523f223" />
+<img src="https://github.com/user-attachments/assets/3420f86e-23d0-478b-a4ba-ae9cb523f223"
+     style="width:250px; max-width:250px;">
 
 
 **Book Compass** is a mobile application designed for teachers to facilitate personalized home reading for students. The app helps select suitable books based on reading levels, content, and language skills, bridging the gap between school and home reading.
