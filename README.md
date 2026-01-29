@@ -4,7 +4,7 @@
   <img src="https://github.com/user-attachments/assets/a98e86d9-3475-485c-9a70-7be6437ce1bd" width="100" style="margin-right:25px;">
   <img src="https://github.com/user-attachments/assets/79319c43-9160-4a24-a507-ca51c63c527d" width="100">
   <br>
-  <sub style="margin-right:65px;">Welcome Screen</sub>
+  <sub style="margin-right:100px;">Welcome Screen</sub>
   <sub>Sign Up Screen</sub>
 </p>
 
